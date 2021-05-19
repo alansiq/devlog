@@ -156,4 +156,10 @@ export const globals = css.global`
       width: 530px;
     }
   }
+
+  @font-face {
+    font-family: "PT Serif", serif;
+    src: local('PT Serif');
+    font-display: swap;
+  }
 `;
