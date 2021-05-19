@@ -9,6 +9,7 @@ class MyDocument extends Document {
   }
 
   render() {
+    
     return (
       <Html>
         <Head>
@@ -18,6 +19,15 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.png" type="image/png" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167344624-1"></script>
+          <script dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-167344624-1');`
+          }} />
+
         </Head>
         <body>
           <Main />
