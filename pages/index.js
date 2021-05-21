@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Prismic from '@prismicio/client'
 import { RichText } from "prismic-reactjs";
 
 // Project components & functions
 import DefaultLayout from "layouts";
-import { Header, PostList, SetupRepo } from "components/home";
+import { Header, PostList, SetupRepo, Loader } from "components/home";
 import { Client } from "utils/prismicHelpers";
 
 /**
  * Homepage component
  */
+
+
 const Home = ({ doc, posts }) => {
+  const delay = 3000
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingState(false)
+    }, delay + 1500);
+  }, []);
+
+  const [loadingState, setLoadingState] = useState(true);
+
+  if (loadingState) {
+    return <Loader text="cd alansiqueira/users" maxTime={delay} />
+  }
+
+
   if (doc && doc.data) {
     return (
       <DefaultLayout>

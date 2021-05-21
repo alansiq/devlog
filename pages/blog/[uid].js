@@ -8,6 +8,7 @@ import { queryRepeatableDocuments } from 'utils/queries'
 import DefaultLayout from "layouts";
 import { BackButton, SliceZone } from "components/post";
 
+
 // Project functions & styles
 import { Client } from "utils/prismicHelpers";
 import { postStyles } from "styles";
@@ -16,6 +17,7 @@ import { postStyles } from "styles";
  * Post page component
  */
 const Post = ({ post }) => {
+
   if (post && post.data) {
     const hasTitle = RichText.asText(post.data.title).length !== 0;
     const title = hasTitle ? RichText.asText(post.data.title) : "Untitled";
