@@ -8,7 +8,7 @@ import { FaDribbble, FaLinkedin, FaGithub } from 'react-icons/fa';
 const Footer = () => (
   <footer>
     <p>
-    This blog is an open source project. You’re welcome to submit suggestions, issues and fork it.
+    This blog is an open source project. You’re welcome to submit suggestions, issues and fork it visiting its <a href="https://github.com/alansiq/devlog">github repo</a>.
       
       <br />
 

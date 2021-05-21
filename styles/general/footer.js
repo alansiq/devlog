@@ -1,14 +1,16 @@
 import css from "styled-jsx/css";
+import { colors } from '../colors';
 
 export const footerStyles = css.global`
   .socials {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     gap: 16px;    
   }
 
   svg { 
-    color: #333;
+    color: ${colors.gray};
     font-size: 1.4rem;
     transition: all 0.1s;
   }
@@ -20,7 +22,7 @@ export const footerStyles = css.global`
   footer {
     max-width: 700px;
     margin: 0 auto;
-    color: #9a9a9a;
+    color: ${colors.gray};
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-style: italic;
@@ -28,7 +30,7 @@ export const footerStyles = css.global`
   }
 
   footer p {
-    border-top: 1px solid #dadada;
+    border-top: 1px solid ${colors.l1};
     padding: 2rem 0;
     margin-bottom: 0;
   }

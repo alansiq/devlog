@@ -1,4 +1,5 @@
 import css from "styled-jsx/css";
+import { colors } from "../colors";
 
 export const postListStyles = css.global`
 
@@ -21,7 +22,7 @@ export const postListStyles = css.global`
   }
 
   .blog-post-meta {
-    color: #9a9a9a;
+    color: ${colors.grayDarker};
     font-family: "Lato", sans-serif;
     margin-bottom: 8px;
   }
