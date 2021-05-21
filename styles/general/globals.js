@@ -1,14 +1,26 @@
 import css from "styled-jsx/css";
 
+const colors = {
+  d2: "#11121B",
+  l1: "#313550",
+  d1: "#2B2D44",
+  raisingblack: "#1F2233",
+  accent: "#23EFE3",
+  white: "#F8F2F0",
+  gray: "#D1D0D0",
+
+}
+
 export const globals = css.global`
   * {
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: #fff7c7; /* WebKit/Blink Browsers */
+    background: ${colors.accent};
+    color: ${colors.d2} /* WebKit/Blink Browsers */
   }
   ::-moz-selection {
-    background: #fff7c7; /* Gecko Browsers */
+    background: ${colors.d2}; /* Gecko Browsers */
   }
 
   /*
@@ -16,13 +28,15 @@ export const globals = css.global`
  */
   body {
     padding: 3rem 0 0 0;
-    color: #353535;
+    color: ${colors.gray};
     line-height: 1.5;
     font-family: "PT Serif", serif;
     font-size: 20px;
+
+    background: ${colors.raisingblack};
   }
   a {
-    color: #353535;
+    color: ${colors.gray};
     text-decoration: none;
     background-repeat: repeat-x;
     background-size: 2px 2px;
@@ -40,7 +54,7 @@ export const globals = css.global`
   .blog-main .h5,
   .blog-main h6,
   .blog-main .h6 {
-    color: #353535;
+    color: ${colors.white};
     text-align: left;
   }
   h1,
@@ -49,6 +63,7 @@ export const globals = css.global`
   h4,
   h5,
   h6 {
+    color: ${colors.white};
     font-family: "Lato", sans-serif;
   }
   h1 {
