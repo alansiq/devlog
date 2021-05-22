@@ -10,21 +10,32 @@ import { Client } from "utils/prismicHelpers";
 
 /**
  * Homepage component
- */
+ **/
 
 
 const Home = ({ doc, posts }) => {
-  const delay = 3000
-  useEffect(() => {
-    setTimeout(() => {
-      setLoadingState(false)
-    }, delay + 1500);
-  }, []);
-
   const [loadingState, setLoadingState] = useState(true);
 
-  if (loadingState) {
-    return <Loader text="cd alansiqueira/users" maxTime={delay} />
+  var hasLoaded = false;
+  const splashScreenDuration = 3000;
+
+  if (typeof window !== "undefined") {
+    hasLoaded = sessionStorage.getItem('loader');
+  }
+
+  useEffect(() => {
+    const timeout = setTimeout( () => {
+      setLoadingState(false);
+      sessionStorage.setItem('loader', 'true')
+      clearTimeout(timeout);
+      
+      }
+      , splashScreenDuration + 500)
+
+  }, [loadingState])
+
+  if (loadingState && !hasLoaded) {
+    return <Loader text="cd alansiqueira/users" maxTime={splashScreenDuration} />
   }
 
 
@@ -58,9 +69,9 @@ export async function getStaticProps({ preview = null, previewData = {} }) {
 
   const posts = await client.query(
     Prismic.Predicates.at("document.type", "post"), {
-      orderings: "[my.post.date desc]",
-      ...(ref ? { ref } : null)
-    },
+    orderings: "[my.post.date desc]",
+    ...(ref ? { ref } : null)
+  },
   )
 
   return {

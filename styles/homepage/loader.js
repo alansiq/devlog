@@ -14,18 +14,18 @@ export const loaderStyles = css.global`
         align-items: center;
     }
 
-    .loader-container h2 {
+    .loader-container .loader-phrase {
         color: ${colors.gray};
         font-weight: 400;
         font-family: "Fira Code", monospace;
 
     }
 
-    .loader-container h2::before {
+    .loader-container .loader-phrase::before {
         content: "$";
     }
 
-    .loader-container h2::after {
+    .loader-container .loader-phrase::after {
         content: "_";
         animation: flash 1s linear infinite;
         color: ${colors.accent};
