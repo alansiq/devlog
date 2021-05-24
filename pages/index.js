@@ -17,7 +17,7 @@ const Home = ({ doc, posts }) => {
   const [loadingState, setLoadingState] = useState(true);
 
   var hasLoaded = false;
-  const splashScreenDuration = 3000;
+  const splashScreenDuration = 2000;
 
   if (typeof window !== "undefined") {
     hasLoaded = sessionStorage.getItem('loader');
@@ -30,12 +30,12 @@ const Home = ({ doc, posts }) => {
       clearTimeout(timeout);
       
       }
-      , splashScreenDuration + 500)
+      , splashScreenDuration + 1000)
 
   }, [loadingState])
 
   if (loadingState && !hasLoaded) {
-    return <Loader text="cd alansiqueira/users" maxTime={splashScreenDuration} />
+    return <Loader text="cd users/alansiq" maxTime={splashScreenDuration} />
   }
 
 

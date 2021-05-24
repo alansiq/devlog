@@ -9,8 +9,8 @@ const Footer = () => (
   <footer>
     <p>
     This blog is an open source project. You’re welcome to submit suggestions, issues and fork it visiting its <a href="https://github.com/alansiq/devlog">github repo</a>.
-      
-      <br />
+    </p>
+    <br />
 
         <div className="socials">
           <a href="https://github.com/alansiq">
@@ -23,7 +23,6 @@ const Footer = () => (
             <FaDribbble  />
           </a>
         </div>
-    </p>
     <style jsx global>{footerStyles}</style>
   </footer>
 )
