@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Prismic from '@prismicio/client'
+import Prismic from '@prismicio/client';
 import { RichText } from "prismic-reactjs";
 
 // Project components & functions
@@ -17,7 +17,7 @@ const Home = ({ doc, posts }) => {
   const [loadingState, setLoadingState] = useState(true);
 
   var hasLoaded = false;
-  const splashScreenDuration = 2000;
+  const splashScreenDuration = 1000;
 
   if (typeof window !== "undefined") {
     hasLoaded = sessionStorage.getItem('loader');

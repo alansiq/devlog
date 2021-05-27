@@ -2,11 +2,6 @@ import react, { useState, useEffect } from 'react';
 import { loaderStyles } from 'styles';
 
 
-
-
-
-
-
 const Loader = (props) => {
 
     const {text, maxTime} = props;
